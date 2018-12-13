@@ -1,8 +1,8 @@
 <template>
 	<div class="head">
-			<slot>
+			<!-- <slot>
 				<span><i class="iconfont icon-sousuo"></i></span>
-			</slot>
+			</slot> -->
 			<router-link to="/login">
 				<span class="rightSpan">{{rightTxt}}</span>			
 			</router-link>

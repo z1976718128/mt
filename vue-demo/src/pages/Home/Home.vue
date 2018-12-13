@@ -1,6 +1,6 @@
 <template>
 	<div class="Home">
-		<Heads rightTxt="登录注册" centTxt="昌平区北七家宏福路" ></Heads>
+		<Heads rightTxt="登录注册" centTxt="深圳宝安动物公园" ></Heads>
 		<Banner :paginationShow="true" paginationPositon="center" ></Banner>
 		<Nav></Nav>
 	</div>
