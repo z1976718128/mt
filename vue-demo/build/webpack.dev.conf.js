@@ -9,6 +9,12 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
+//本地接口配置
+const express = require("express");
+const app =express();
+var newData = require("../src/api/newData.json");
+var apiRoutes = express.Router();
+app.use("/api",apiRoutes);
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
@@ -22,6 +28,13 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 
   // these devServer options should be customized in /config/index.js
   devServer: {
+    before(app){
+  		app.get("/api/newData",function(req,res){
+				res.json({
+					dataInfo:newData,
+				});
+  		});
+  	},
     clientLogLevel: 'warning',
     historyApiFallback: {
       rewrites: [

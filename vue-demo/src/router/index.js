@@ -7,7 +7,10 @@ import Order from "@/pages/Order/Order"
 import Profile from "@/pages/Profile/Profile"
 import Seach from "@/pages/Seach/Seach"
 import Login from "@/pages/Login/Login"
-
+import Shop from "@/pages/Shop/Shop"
+import ShopGods from "@/pages/Shop/ShopGods/ShopGods"
+import ShopComments from "@/pages/Shop/ShopComments/ShopComments"
+import ShopInfo from "@/pages/Shop/ShopInfo/ShopInfo"
 
 Vue.use(Router)
 
@@ -43,7 +46,6 @@ export default new Router({
     		},
     		{
     			path:"/seach",
-				//component:Seach,
 				component: (resolve) => require(['@/pages/Seach/Seach.vue'],resolve),								
 				meta: { 
 					showFoot:true
@@ -55,9 +57,31 @@ export default new Router({
 			},
 			{
 				path:"/login",
-				//component:Login,
 				component: (resolve) => require(['@/pages/Login/Login.vue'],resolve),								
-			}
+			},
+			{
+				path:"/shop",
+				component: (resolve) => require(['@/pages/Shop/Shop.vue'],resolve),		
+				children:[
+					{
+						path:"/shop/gods",
+						component: (resolve) => require(['@/pages/Shop/ShopGods/ShopGods.vue'],resolve),								
+					},
+					{
+						path:"/shop/comments",
+						component: (resolve) => require(['@/pages/Shop/ShopComments/ShopComments.vue'],resolve),								
+					},
+					{
+						path:"/shop/info",
+						component: (resolve) => require(['@/pages/Shop/ShopInfo/ShopInfo.vue'],resolve),								
+					},
+					{
+						path:"",
+						//路由重定向
+						redirect:"/shop/gods"
+					},
+				]						
+			},
   ]
 });
 

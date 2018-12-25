@@ -1,18 +1,19 @@
 <template>
 	<div class="profile">
 		<div class="profile-h">
-			<Heads pro="我的"></Heads>
+			<Heads title="我的"></Heads>
 		</div>
-		<section>
+		<section class="section-body">
 			<router-link to="/login">
 				<span class="user"><i class="iconfont icon-seeusero"></i></span>
 			</router-link>
 			<router-link to="/login">
-				<span class="login">登录/注册</span>
+				<span class="login" v-if="!this.sj">{{this.pas || "登录/注册"}}</span>
+				<span class="login" v-else><i class="iconfont icon-shouji1"></i>{{this.sj || "登录/注册"}}</span>
 			</router-link>
 			<router-link to="/login">
 				<span class="sPright"><i class="iconfont icon-you"></i></span>
-				<p class="iphone"><i class="iconfont icon-shouji1"></i>暂无绑定手机号</p>
+				<p class="iphone"><i v-if="!this.sj" class="iconfont icon-shouji1"></i>{{this.sj?this.sow:"暂无绑定手机号"}}</p>
 			</router-link>
 		</section>
 		<div class="money">
@@ -36,26 +37,61 @@
 			<div class="footer-s"><img src="./img/kefu.png" alt=""><span>美团外卖卡</span><i class="iconfont icon-you"></i></div>
 			<div class="footer-s"><img src="./img/xiazaieliaomaapp.png" alt=""><span>服务中心</span><i class="iconfont icon-you"></i></div>
 		</div>
+		<div class="foots" v-if="this.sj || this.pas" @click="mint">
+			<mt-button type="danger" width="100%">
+				退出登陆
+			</mt-button>
+		</div>
 	</div>
 </template>
 
 <script>
+import {mapMutations} from "vuex"
+import { MessageBox,Toast } from 'mint-ui';
 import Heads from "@/components/Heads/Heads"
 export default{
+	data () {
+		return {
+			sj:"",
+			pas:"",
+			sow:"",
+		}
+	},
 	components:{
 		Heads
+	},
+	created () {
+		this.sj = sessionStorage.getItem("user")	
+		this.pas = sessionStorage.getItem("name")	
+	},
+	methods: {
+		mint(){
+			MessageBox.confirm('确定退出登陆?').then(
+			//确定	
+			action => {
+				sessionStorage.removeItem("user")
+				sessionStorage.removeItem("name")
+				this.$router.replace("./login")
+				Toast("退出成功")
+			},
+			//取消
+			action => {
+				console.log("no")
+			}
+			);
+		}	
 	}
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less" >
 .profile-h{
 	width: 100%;
 	text-align: center;
 	border: 1px solid #fff;
 	
 }
-section{
+.section-body{
 	width: 100%;
 	height: 200px;
 	margin-top: 80px;
@@ -161,4 +197,19 @@ section{
 			}
 		}
 	}
+.foots{
+	width: 100%;
+	height: 90px;
+	button{
+		width: 100%;
+		height: 100%;
+		font-size: 25px;
+	}
+}	
+.mint-msgbox,.mint-msgbox-title,.mint-msgbox-message,.mint-msgbox-wrapper{
+	font-size: 30px !important;
+}
+.mint-msgbox-btns{
+	height: 0.9rem;
+}
 </style>

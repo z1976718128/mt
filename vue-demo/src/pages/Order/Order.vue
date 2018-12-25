@@ -1,7 +1,7 @@
 <template>
 	<div class="Order">
 		<div class="Order-h">
-			<Heads ord="订单"/>
+			<Heads title="订单"/>
 		</div>
 		<section>
 			<img src="//fuss10.elemecdn.com/2/67/64f199059800f254c47e16495442bgif.gif"/>

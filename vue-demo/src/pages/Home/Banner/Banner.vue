@@ -23,7 +23,7 @@ import Swiper from "swiper";
 export default{
 	data(){
 		return{
-			
+			arr:""
 		}
 	},
 	props:{
@@ -44,13 +44,12 @@ export default{
 		new Swiper(".swiper-container",{
 			loop:this.loop,
 			pagination:".swiper-pagination",
+		}),
+		this.axios.get("/api/newData").then((res)=>{
+			 this.arr =res.data.dataInfo.data
 		})
 	},
-	computed:{
-		arr(){
-			return this.$store.state.arr;
-		}
-	}
+	
 }
 </script>
 

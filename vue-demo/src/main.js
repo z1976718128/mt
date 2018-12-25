@@ -14,17 +14,18 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 Vue.use(MintUI);
 
+import Axios from "axios"
+import VueAxios from "vue-axios"
+Vue.use(VueAxios,Axios)
 
 Vue.config.productionTip = false
 
-//引入vuex
-import {store} from "@/store/index.js"
+
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  store,
   components: { App },
   template: '<App/>'
 })

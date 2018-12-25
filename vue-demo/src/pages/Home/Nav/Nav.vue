@@ -1,18 +1,18 @@
 <template>
 	<div class="nav" >
 		<h2><i class="iconfont icon-xuanxiang"></i>附近商家</h2>
-		<div class="nav-s" v-for="item in shop" :key="item.id">
+		<div class="nav-s" v-for="item in shop" :key="item.id" @click="$router.push('/shop')">
 			<div class="nav-item">
 				<img class="nav-img" :src="item.imgs"/>
 				<div class="index-main">
-					<section>
+					<section class="section-item">
 						<h3>
 							<i class="iconfont icon-pinpai1"></i>
 							<span class="shopTitle">{{item.title}}</span>
 						</h3>	
 						<span class="rightXin"><i class="iconfont icon-xin"></i></span>
 					</section>
-					<section>
+					<section  class="section-item">
 						<div class="s-grey">
 							<div class="s-color" style="width: 82%;"></div>
 						</div>
@@ -20,7 +20,7 @@
 						<span>{{item.ys}}</span>
 						<span class="conton">{{item.fn}}</span>	
 					</section>
-					<section>
+					<section class="section-item">
 						<span>￥{{item.qs}}</span>
 						<span>|</span>
 						<span>{{item.ps}}</span>
@@ -96,7 +96,7 @@ export default{
 	}
 	.index-main{
 		width: 100%;
-  		section{
+  		.section-item{
   			width: 70%;
   			margin-left: 25%;
   			padding: 10px 0;

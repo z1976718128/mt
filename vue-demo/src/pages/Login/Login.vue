@@ -6,13 +6,13 @@
         <div class="login-title">
             <h2>易外卖</h2>
             <div class="login-i">
-                <span :class="{active:loginTrue}" @click="loginTrue=true">短信登录</span>
-                <span :class="{active:!loginTrue}" @click="loginTrue=false">密码登录</span>
+                <span :class="{newactive:loginTrue}" @click="loginTrue=true">短信登录</span>
+                <span :class="{newactive:!loginTrue}" @click="loginTrue=false">密码登录</span>
             </div>
             <div class="from-s">
                 <form action="#">
                     <div>
-                        <section :class="{active:loginTrue}"> 
+                        <section :class="{newactive:loginTrue}"> 
                             <!-- prevent禁止发送表单的默认行为 -->
                             <p class="user">
                                 <input v-model="phone" type="text" placeholder="手机号" maxlength="11">
@@ -29,12 +29,12 @@
                                 </router-link>
                             </p>
                             <div class="nc-containew">
-                                <button @click="login()">登录</button>
+                                <button @click.prevent="login()">登录</button>
                                 <h3>关于我们</h3>
                             </div>
                     </div>
                     <div class="fast" >
-                        <section :class="{active:!loginTrue}">
+                        <section :class="{newactive:!loginTrue}">
                             <p class="user"><input v-model="name"  type="text" placeholder="手机号/邮箱/用户名"></p>
                             <section class="pass">
                                 <input v-model="passwrod" type="text" placeholder="密码" v-if="showPass">
@@ -86,20 +86,33 @@ export default {
                 const {showPassd,phone,code} =this;
                 if(this.phone == ""){
                     this.altShow("请输入手机号");
+                    return;
                 }
                 else if (!/^1[3|5|8][0-9]\d{8}$/.test(this.phone)) {
                     this.altShow("手机号不正确");
+                    return;
+
                 }else if(!/^\d{6}$/.test(code)){
                     this.altShow("验证码不正确");
+                    return;
+                }else{    
+                    sessionStorage.setItem("user",this.phone)
+                    this.$router.replace('./profile')
                 }
             }else{
                 const {name,passwrod,captcha} =this;
                 if(this.name ==""){
                     this.altShow("请输入手机号/邮箱/用户名");
+                    return;
                 }else if(!this.name){
                     this.altShow("密码不正确");
+                    return;
                 }else if(!/^\d{6}$/.test(captcha)){
                     this.altShow("图形验证码不正确");
+                    return;
+                }else{
+                    sessionStorage.setItem("name",this.name)
+                    this.$router.replace('./profile')
                 }
             }
         },
@@ -254,7 +267,7 @@ export default {
     }
 
 }
-.active{
+.newactive{
     visibility: visible;
     border-bottom: 2px solid lightseagreen;
 }
