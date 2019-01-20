@@ -5,14 +5,14 @@
 			<div class="nav-item">
 				<img class="nav-img" :src="item.imgs"/>
 				<div class="index-main">
-					<section class="section-item">
+					<section class="section-items">
 						<h3>
 							<i class="iconfont icon-pinpai1"></i>
 							<span class="shopTitle">{{item.title}}</span>
 						</h3>	
 						<span class="rightXin"><i class="iconfont icon-xin"></i></span>
 					</section>
-					<section  class="section-item">
+					<section  class="section-items">
 						<div class="s-grey">
 							<div class="s-color" style="width: 82%;"></div>
 						</div>
@@ -20,7 +20,7 @@
 						<span>{{item.ys}}</span>
 						<span class="conton">{{item.fn}}</span>	
 					</section>
-					<section class="section-item">
+					<section class="section-items">
 						<span>￥{{item.qs}}</span>
 						<span>|</span>
 						<span>{{item.ps}}</span>
@@ -69,6 +69,7 @@ export default{
 <style lang="less" scoped>
 .nav{
 	width: 100%;
+	height:30rem;
 	overflow: hidden;	
 	margin-top: 30px;	
 	h2{
@@ -96,13 +97,11 @@ export default{
 	}
 	.index-main{
 		width: 100%;
-  		.section-item{
+  		.section-items{
   			width: 70%;
   			margin-left: 25%;
   			padding: 10px 0;
   			h3{
-  				height: 50px;
-  				line-height:50px ;
   				display: inline-block;
   				.iconfont{
   					display: inline-block;

@@ -1,0 +1,247 @@
+{
+  
+  
+  "redpack": [
+    {
+      "description": "7元无门槛红包",
+      "status": 0,
+      "sub_title": "超级会员红包",
+      "title": "无门槛",
+      "title_detail": "无门槛",
+      "type": 1,
+      "value": "7"
+    },
+    {
+      "description": "3元专享红包",
+      "has_multi_hongbao": false,
+      "status": 0,
+      "sub_title": "店铺专享红包",
+      "title": "店铺",
+      "title_detail": "满80可用",
+      "type": 0,
+      "value": "3"
+    }
+  ],
+  "rst": {
+    "act_tag": 0,
+    "activities": [
+      {
+        "attribute": "17.0",
+        "description": "新用户下单立减17元(不与其它活动同享)",
+        "icon_color": "70bc46",
+        "icon_name": "首单",
+        "id": 1893586026,
+        "is_exclusive_with_food_activity": true,
+        "name": "新用户立减(不与其他活动共享)",
+        "tips": "新用户下单立减17元(不与其它活动同享)",
+        "type": 103
+      },
+      {
+        "attribute": "{\"50\": {\"1\": 17.0, \"0\": 0}, \"75\": {\"1\": 23.0, \"0\": 0}, \"100\": {\"1\": 33.0, \"0\": 0}, \"30\": {\"1\": 11.0, \"0\": 0}}",
+        "description": "满30减11，满50减17，满75减23，满100减33",
+        "icon_color": "f07373",
+        "icon_name": "满减",
+        "id": 1934099066,
+        "is_exclusive_with_food_activity": true,
+        "name": "佳泰砂锅粥",
+        "tips": "满30减11，满50减17，满75减23，满100减33",
+        "type": 102
+      },
+      {
+        "description": "特价商品23元起",
+        "icon_color": "f1884f",
+        "icon_name": "特价",
+        "id": 1860043162,
+        "name": "单品定价",
+        "tips": "单品定价"
+      }
+    ],
+    "address": "深圳市南山区南头街道玉泉路与艺园路交汇处",
+    "albums": [
+      {
+        "count": 1,
+        "cover_image_hash": "8b4b36497d2ecdb98df9867d267fe2a3jpeg",
+        "name": "门面",
+        "photos": [
+          {
+            "id": 102566242,
+            "image_hash": "8b4b36497d2ecdb98df9867d267fe2a3jpeg",
+            "type": "FRONT"
+          }
+        ]
+      },
+      {
+        "count": 1,
+        "cover_image_hash": "699f2d4ba832aa2c8b6dfcdfd2bf4aa4jpeg",
+        "name": "大堂",
+        "photos": [
+          {
+            "id": 102566250,
+            "image_hash": "699f2d4ba832aa2c8b6dfcdfd2bf4aa4jpeg",
+            "type": "HALL"
+          }
+        ]
+      }
+    ],
+    "authentic_id": 4354213077118678,
+    "business_info": "{\"lemon_support_tags\": [{\"color\": \"cce23028\", \"text\": \"30减11\", \"border\": \"4ce23028\", \"background\": null, \"type\": 1, \"icon\": null}, {\"color\": \"cce23028\", \"text\": \"50减17\", \"border\": \"4ce23028\", \"background\": null, \"type\": 1, \"icon\": null}, {\"color\": \"cce23028\", \"text\": \"75减23\", \"border\": \"4ce23028\", \"background\": null, \"type\": 1, \"icon\": null}, {\"color\": \"cce23028\", \"text\": \"100减33\", \"border\": \"4ce23028\", \"background\": null, \"type\": 1, \"icon\": null}, {\"color\": \"a25c03\", \"text\": \"7元会员红包\", \"border\": \"4ca25c03\", \"background\": null, \"type\": 2, \"icon\": null}, {\"color\": \"cce23028\", \"text\": \"品质联盟\", \"border\": \"4ce23028\", \"background\": null, \"type\": 4, \"icon\": null}, {\"color\": \"cce23028\", \"text\": \"首单减17\", \"border\": \"4ce23028\", \"background\": null, \"type\": 5, \"icon\": null}, {\"color\": \"cce23028\", \"text\": \"23元特价\", \"border\": \"4ce23028\", \"background\": null, \"type\": 7, \"icon\": null}, {\"color\": \"cce23028\", \"text\": \"领3元红包\", \"border\": \"4ce23028\", \"background\": null, \"type\": 8, \"icon\": null}, {\"color\": \"cce23028\", \"text\": \"返红包\", \"border\": \"4ce23028\", \"background\": null, \"type\": 9, \"icon\": null}], \"ad_info\": null}",
+    "delivery_fee_discount": 2,
+    "delivery_mode": {
+      "border": "",
+      "color": "2395FF",
+      "gradient": {
+        "rgb_from": "00AAFF",
+        "rgb_to": "0085FF"
+      },
+      "icon_hash": "b9b45d2f6ff0dbeef3a78ef0e4e90abapng",
+      "id": 1,
+      "is_solid": true,
+      "text": "蜂鸟专送",
+      "text_color": "FFFFFF"
+    },
+    "description": "",
+    "distance": 1098,
+    "favored": false,
+    "flavors": [
+      {
+        "id": 265,
+        "name": "简餐"
+      },
+      {
+        "id": 215,
+        "name": "包子粥店"
+      }
+    ],
+    "float_delivery_fee": 2,
+    "float_minimum_order_amount": 20,
+    "has_story": false,
+    "id": "E11783152530307312087",
+    "image_path": "04a4181fc589c69b9bb52bf302234d67png",
+    "is_new": true,
+    "is_premium": false,
+    "is_star": false,
+    "is_stock_empty": 0,
+    "is_valid": 1,
+    "latitude": 22.54652,
+    "longitude": 113.928059,
+    "max_applied_quantity_per_order": -1,
+    "name": "佳泰虾蟹砂锅粥（马家龙店）",
+    "next_business_time": "明天 10:30",
+    "only_use_poi": false,
+    "opening_hours": [
+      "10:30/01:00"
+    ],
+    "order_lead_time": 40,
+    "out_of_range": false,
+    "phone": "0755-86216299",
+    "piecewise_agent_fee": {
+      "description": "配送费¥2",
+      "extra_fee": -2,
+      "is_extra": true,
+      "no_subsidy_fee": "¥4",
+      "rules": [
+        {
+          "fee": 2,
+          "price": 20
+        }
+      ],
+      "tips": "配送费¥2"
+    },
+    "platform": 0,
+    "posters": [
+      {
+        "id": 9342185,
+        "image_hash": "7adcb17c864354acdf620094dcd0ab1apng",
+        "name": "海报",
+        "type": 3,
+        "url": "eleme://restaurant_promotion?restaurant_id=E11783152530307312087&banner_id=9342185"
+      }
+    ],
+    "promotion_info": "新鲜现熬，海鲜砂锅粥\n1：生米现熬，确保美味可口。\n2：本店砂锅粥属于潮汕砂锅粥系列，出品时间较长，请客官理解。\n3：粥类出品温度较高，请客官注意。\n4：服务如有不满，欢迎拨打客服电话指正。",
+    "qualification": {
+      "link": "https://h5.ele.me/shop/certification/#/?restaurant_id=E11783152530307312087"
+    },
+    "rating": 4.7,
+    "rating_count": 222,
+    "recent_order_num": 687,
+    "recommend": {
+      "is_ad": false,
+      "reason": ""
+    },
+    "recommend_reasons": [
+      {
+        "name": "回头客多"
+      }
+    ],
+    "regular_customer_count": 0,
+    "scheme": "https://h5.ele.me/shop/#id=E11783152530307312087",
+    "shop_sign": {
+      "brand_story": "",
+      "image_hash": "ce0283549d417057f6829e829af1a2eapng"
+    },
+    "status": 1,
+    "support_tags": [
+      {
+        "border": "dddddd",
+        "color": "666666",
+        "icon": "4e20966ca2a516de3f02fb9c7fd1bc6dpng",
+        "text": "简餐",
+        "type": 1
+      },
+      {
+        "border": "dddddd",
+        "color": "333333",
+        "text": "品质联盟"
+      }
+    ],
+    "supports": [
+      {
+        "border": "90dddddd",
+        "description": "商家原因导致订单取消，赔付代金券",
+        "icon_color": "999999",
+        "icon_name": "赔",
+        "id": 10,
+        "name": "拒单赔",
+        "text_color": "666666",
+        "two_characters_icon_name": ""
+      },
+      {
+        "border": "90dddddd",
+        "description": "该商户食品安全已由国泰产险承担，食品安全有保障",
+        "icon_color": "999999",
+        "icon_name": "保",
+        "id": 7,
+        "name": "食安保",
+        "text_color": "666666",
+        "two_characters_icon_name": "保险"
+      },
+      {
+        "border": "90dddddd",
+        "description": "该商家支持开发票，开票订单金额50元起，请在下单时填写好发票抬头",
+        "icon_color": "999999",
+        "icon_name": "票",
+        "id": 4,
+        "name": "开发票",
+        "text_color": "666666",
+        "two_characters_icon_name": "发票"
+      }
+    ],
+    "target_tag_path": "2ee2741ca9ac548f5efce60c645668cbpng",
+    "theme": {
+      "default_color": "2395ff",
+      "header_style": 3,
+      "hongbao_style": 0,
+      "logo_sub": "d067742a680fec1e0a2fc40cb90cfdd1png",
+      "price_color": "ff5339",
+      "third_tab_name": "商家",
+      "vanish_fields": []
+    },
+    "type": 0,
+    "weight": {
+      "basic": 20000,
+      "maximum": 20000,
+      "unit": 20000,
+      "unit_fee": 20000
+    }
+  }
+}

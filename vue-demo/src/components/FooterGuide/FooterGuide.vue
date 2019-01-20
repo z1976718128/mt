@@ -48,6 +48,7 @@
 			border: 1px solid #eee;
 			display: flex;
 			text-align: center;
+			z-index: 1;
 			.foot-item{
 				flex: 1;
 				

@@ -35,7 +35,11 @@ export default{
 	created () {
 		this.sj = sessionStorage.getItem("user")	
 		this.pas = sessionStorage.getItem("name")
-	}
+	},
+	mounted () {
+    this.$router.push("/home")
+   }
+
 }
 </script>
 

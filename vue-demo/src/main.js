@@ -18,14 +18,36 @@ import Axios from "axios"
 import VueAxios from "vue-axios"
 Vue.use(VueAxios,Axios)
 
+import {store} from "@/store/store"
+
 Vue.config.productionTip = false
 
-
+/* 
+全局守卫
+router.beforeEach((to, from, next) => {
+  //console.log(to)
+  const user=this.sj = sessionStorage.getItem("user")	
+  const name=this.pas = sessionStorage.getItem("name")	
+    if (!user || !name) {//未登录
+        if (to.path !== '/login') {//跳转到登录页
+            return next({path: '/login'});
+        }else {
+            next();
+        }
+    }else {//已登录
+        if (to.path === '/login') {//跳转到首页
+            return next({path: '/home'});
+        }
+        next();
+    }
+})
+*/
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

@@ -1,18 +1,18 @@
 <template>
-    <div>
+    <div class="shop">
         <ShopHead></ShopHead>
         <div class="tab">
-            <div class="tab-item"  @click="show=true">
-                <router-link  :class="{ation: '/shop/gods'== $route.path}" to="/shop/gods" @click="goTo('/shop/gods')">点餐</router-link>
+            <div class="tab-item">
+                <router-link  :class="{ation: '/shop/ShopOrder'== $route.path}" to="/shop/ShopOrder" @click="goTo('/shop/ShopOrder')">点餐</router-link>
             </div>
-            <div class="tab-item" @click="show=false">
+            <div class="tab-item">
                 <router-link :class="{ation: '/shop/comments' == $route.path}"  to="/shop/comments" @click="goTo('/shop/comments')">评价</router-link>
             </div>
-            <div class="tab-item" @click="show=false">
+            <div class="tab-item">
                 <router-link :class="{ation:'/shop/info' == $route.path}"  to="/shop/info" @click="goTo('/shop/info')">商家</router-link>
             </div>
         </div>
-        <router-view />
+        <router-view/>
     </div>
 </template>
 
@@ -20,12 +20,7 @@
 import ShopHead from "@/components/ShopHead/ShopHead"
 export default {
     components: {
-        ShopHead
-    },
-    data () {
-        return {
-            show:true,
-        }
+        ShopHead,
     },
     methods: {
       goTo(path){
@@ -40,6 +35,10 @@ export default {
     color: lightseagreen !important;
     border-bottom: 3px solid lightseagreen;
 }
+.shop{
+    width: 100%;
+    position: relative;
+}
 .tab{
     width: 100%;
     height: 80px;
@@ -53,6 +52,7 @@ export default {
             height: 100%;
             display: inline-block;
             color: #666 ;
+            font-size: 30px;
         }   
     }
 }

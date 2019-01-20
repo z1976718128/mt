@@ -11,9 +11,6 @@ export default {
   components:{
   	FooterGuide
   },
-  mounted () {
-    this.$router.push("/home")
-  }
 }
 </script>
 
@@ -21,14 +18,9 @@ export default {
 #app 
 	width 100%
 	height 100%
-	background #f5f5f5
-	overflow: hidden;
-		
 a{
 	color: #fff;
   text-decoration none;
 }
-body{
-	
-}
+  
 </style>

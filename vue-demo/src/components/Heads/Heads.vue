@@ -1,6 +1,7 @@
 <template>
 	<div class="head">
 		 <slot name="left"></slot>
+		 <slot name="backs"></slot>
 		 <span class="title">{{title}}</span>			
 		 <slot name="right"></slot>	
 	</div>

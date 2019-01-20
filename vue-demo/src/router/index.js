@@ -8,7 +8,7 @@ import Profile from "@/pages/Profile/Profile"
 import Seach from "@/pages/Seach/Seach"
 import Login from "@/pages/Login/Login"
 import Shop from "@/pages/Shop/Shop"
-import ShopGods from "@/pages/Shop/ShopGods/ShopGods"
+import ShopOrder from "@/pages/Shop/ShopOrder/ShopOrder"
 import ShopComments from "@/pages/Shop/ShopComments/ShopComments"
 import ShopInfo from "@/pages/Shop/ShopInfo/ShopInfo"
 
@@ -24,6 +24,7 @@ export default new Router({
 				//路由懒加载
 				component: (resolve) => require(['@/pages/Home/Home.vue'],resolve),
 				meta: { 
+					title:"首页的路由",
 					showFoot:true
 				 }
 				
@@ -52,7 +53,7 @@ export default new Router({
 				 }
     		},
     		{
-    			path:"/",
+    			path:"",
 				component:Home
 			},
 			{
@@ -64,8 +65,8 @@ export default new Router({
 				component: (resolve) => require(['@/pages/Shop/Shop.vue'],resolve),		
 				children:[
 					{
-						path:"/shop/gods",
-						component: (resolve) => require(['@/pages/Shop/ShopGods/ShopGods.vue'],resolve),								
+						path:"/shop/ShopOrder",
+						component: (resolve) => require(['@/pages/Shop/ShopOrder/ShopOrder.vue'],resolve),								
 					},
 					{
 						path:"/shop/comments",
@@ -78,7 +79,7 @@ export default new Router({
 					{
 						path:"",
 						//路由重定向
-						redirect:"/shop/gods"
+						redirect:"/shop/ShopOrder"
 					},
 				]						
 			},

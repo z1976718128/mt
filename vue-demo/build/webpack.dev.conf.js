@@ -12,7 +12,8 @@ const portfinder = require('portfinder')
 //本地接口配置
 const express = require("express");
 const app =express();
-var newData = require("../src/api/newData.json");
+const newData = require("../src/mock/newData.json");
+const sData = require("../src/mock/sData.json");
 var apiRoutes = express.Router();
 app.use("/api",apiRoutes);
 
@@ -33,7 +34,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 				res.json({
 					dataInfo:newData,
 				});
-  		});
+      });
+      app.get("/api/sData",function(req,res){
+				res.json({
+					dataInfo:sData,
+				});
+      });
   	},
     clientLogLevel: 'warning',
     historyApiFallback: {
