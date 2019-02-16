@@ -4,9 +4,9 @@
         <div class="order-men">
             <div class="left" >
                 <ul>
-                    <li v-for="(menu,index) in data.menu" :key="index" :class="{current:currentIndexs==index}">{{menu.name}}</li>
+                    <li v-for="(menu,index) in data.menu" :key="index" :class="{current:index==currentIndexs}">{{menu.name}}</li>
                 </ul>
-            </div>          
+            </div>
             <div class="right" ref="orderD">
                 <ul class="rightUl">
                     <li class="liItem" v-for="(title,index) in data.menu" :key="index"  v-if="title">
@@ -15,12 +15,12 @@
                             <li  v-for="(order,index) in title.foods" :key="index">
                                 <span class="ordrImg"><img :src="order.icon" alt=""></span>
                                 <section class="content">
-                                    <h3>{{order.name}}</h3>
+                                    <p>{{order.name}}</p>
                                     <p class="">{{order.description}}</p>
-                                    <p><span>月售{{order.month_sales}}份</span><span>好评率{{order.satisfy_rate}}%</span></p>
-                                    <p>￥{{order.price}}</p>
-                                    <div class="iconfont icon-plus-fill iconColor">
-
+                                    <p><span>月售{{order.sellCount}}份</span><span class="right">好评率{{order.rating}}%</span></p>
+                                    <p class="red block">￥{{order.price}}</p>
+                                    <div class="cart">
+                                        <ShopGoods :order="order"/>
                                     </div>
                                 </section>
                             </li>
@@ -29,12 +29,15 @@
                 </ul>
             </div>
         </div>
+         <ShopCart/>
     </div>
 </template>
 <script>
 import ShowShops from "@/components/ShowShops/ShowShops"
 import {mapState} from "vuex"
 import BScroll from "better-scroll"
+import ShopGoods from "@/components/ShopGoods/ShopGoods"
+import ShopCart from "@/components/ShopCart/ShopCart"
 export default {
     data () {
         return {
@@ -44,7 +47,9 @@ export default {
         }
     },
     components:{
-        ShowShops
+        ShowShops,
+        ShopGoods,
+        ShopCart
     },
     created () {
 		this.$store.dispatch("getData",()=>{
@@ -60,7 +65,10 @@ export default {
         ...mapState(["data"]),
         currentIndexs(){
             const {scrollY,tops} = this;
-            const index =this.tops.findIndex((t,index) => true)
+            const index =this.tops.findIndex((t,index) => {
+                // console.log(t)
+                return scrollY>=t && scrollY<tops[index+1];
+            })
             return index
         }
     },
@@ -133,6 +141,21 @@ export default {
                 .content{
                     flex: 1;
                     margin-left:15px; 
+                    font-size: 25px;
+                    p{
+                        margin: 20px 0;
+                    }
+                    .block{
+                        display: inline-block;
+                    }
+                    .cart{
+                        display: inline-block;
+                        float: right;
+                        vertical-align: middle; 
+                    }
+                    .right{
+                        margin-left: 30px;
+                    }
                 }
             }
         }

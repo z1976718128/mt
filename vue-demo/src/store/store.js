@@ -12,7 +12,7 @@ export let store =new Vuex.Store({
     mutations:{
         getData(state,res){
             state.data = res.data.dataInfo;         
-            //console.log(state.data.menu); 
+            console.log(state.data); 
         }
     },
     actions:{
@@ -22,5 +22,8 @@ export let store =new Vuex.Store({
                 context.commit("getData",res)
             })          
         }
+    },
+    getters:{
+        
     }
 });
